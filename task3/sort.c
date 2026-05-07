@@ -6,3 +6,7 @@ int plain(const void* a, const void* b) {
         const char* sb = *(const char**)b;
         return strcmp(sa, sb);
 }
+
+int lex(const void* a, const void* b) {
+        return strcasecmp(*(const char**)a, *(const char**)b);
+}

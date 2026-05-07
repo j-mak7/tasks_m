@@ -32,12 +32,11 @@ int main(int argc, char* argv[]) {
 		count++;
 		token = strtok(NULL, "\n");
 	}
-	/*for (int i = 0; i < count; i++) {
-		printf("'%s'", arr[i]);
-	}
-	printf("\n");*/
 	if (strcmp(argv[3], "plain") == 0) {
 		qsort(arr, count, sizeof(char* ), plain);
+	}
+	else if (strcmp(argv[3], "lex") == 0) {
+		qsort(arr, count, sizeof(char* ), lex);
 	}
 	FILE* output = fopen(argv[2], "w");
 	if (!output) {

@@ -3,4 +3,6 @@
 
 int plain(const void* a, const void* b);
 
+int lex(const void* a, const void* b);
+
 #endif
