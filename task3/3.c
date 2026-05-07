@@ -38,6 +38,12 @@ int main(int argc, char* argv[]) {
 	else if (strcmp(argv[3], "lex") == 0) {
 		qsort(arr, count, sizeof(char* ), lex);
 	}
+	else if (strcmp(argv[3], "rplain") == 0) {
+		qsort(arr, count, sizeof(char* ), rplain);
+	}
+	else if (strcmp(argv[3], "rlex") == 0) {
+		qsort(arr, count, sizeof(char* ), rlex);
+	}
 	FILE* output = fopen(argv[2], "w");
 	if (!output) {
 		perror("fopen");
