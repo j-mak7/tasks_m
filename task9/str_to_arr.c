@@ -21,7 +21,7 @@ int* str_to_arr(char* str, int* len) {
 	for (int i = 0; i < count_words; i++) {
 		arr[i] = atoi(words[i]);
 		//free(words[i]);
-		printf("%d ", arr[i]);
+		//printf("%d ", arr[i]);
 	}
 	*len = count_words;
 	free(words);
