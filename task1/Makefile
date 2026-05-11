@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -g
-SOURCES=1.c
+SOURCES=1.c thread.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=task1
 
