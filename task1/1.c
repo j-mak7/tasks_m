@@ -46,6 +46,11 @@ int main(int argc, char *argv[]) {
 	for (int i = 0; i < count_thr; i++) {
 		pthread_join(threads[i], NULL);
 	}
+	int end = thread_data[0].right;
+	for (int i = 1; i < count_thr; i++) {
+		merge(arr, 0, end, thread_data[i].right);
+		end = thread_data[i].right;
+	}
 	for (int i = 0; i < count; i++) {
 		printf("%d ", arr[i]);
 	}
