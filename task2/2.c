@@ -14,23 +14,27 @@ int main(int argc, char* argv[]) {
 	int fd2;
 	char arr[1000];
 	if (strcmp(argv[1], argv[2]) > 0) {
-		int n = read(0, arr, sizeof(arr));
-		fd1 = open(argv[1], O_WRONLY);
-		write(fd1, arr, n);
-		close(fd1);
-		fd2 = open(argv[2], O_RDONLY);
-		n = read(fd2, arr, sizeof(arr));
-		write(1, arr, n);
-		close(fd2);
+		while (1) {
+			int n = read(0, arr, sizeof(arr));
+			fd1 = open(argv[1], O_WRONLY);
+			write(fd1, arr, n);
+			close(fd1);
+			fd2 = open(argv[2], O_RDONLY);
+			n = read(fd2, arr, sizeof(arr));
+			write(1, arr, n);
+			close(fd2);
+		}
 	} else {
-		fd2 = open(argv[2], O_RDONLY);
-		int n = read(fd2, arr, sizeof(arr));
-		write(1, arr, n);
-		close(fd2);
-		n = read(0, arr, sizeof(arr));
-		fd1 = open(argv[1], O_WRONLY);
-		write(fd1, arr, n);
-		close(fd1);
+		while (1) {
+			fd2 = open(argv[2], O_RDONLY);
+			int n = read(fd2, arr, sizeof(arr));
+			write(1, arr, n);
+			close(fd2);
+			n = read(0, arr, sizeof(arr));
+			fd1 = open(argv[1], O_WRONLY);
+			write(fd1, arr, n);
+			close(fd1);
+		}
 	}
 	return 0;
 }
