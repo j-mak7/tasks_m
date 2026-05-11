@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -g
-SOURCES=4.c print.c
+SOURCES=4.c print.c addstr.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=task4
 
