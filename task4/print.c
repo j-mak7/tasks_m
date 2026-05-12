@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "print.h"
 
 void print_arr(char* arr, int len) {

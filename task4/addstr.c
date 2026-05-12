@@ -10,3 +10,14 @@ bool find_str_arr(char** arr, int arr_len, char* str) {
 	}
 	return false;
 }
+
+void alloc_mem(char*** arr, int* len, int* cap) {
+	if (*cap <= *len) {
+		*cap *= 2;
+		char** tmp = realloc(*arr, *cap * sizeof(char*));
+		if (!tmp) {
+			return;
+		}
+		*arr = tmp;
+	}
+}
