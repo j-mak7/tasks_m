@@ -5,6 +5,10 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 #include "copy.h"
+#include "print.h"
+
+#define PARENT "parent_copy"
+#define CHILD "child_copy"
 
 int main(int argc, char* argv[]){
 	if (argc < 2) {
@@ -22,15 +26,17 @@ int main(int argc, char* argv[]){
 		exit(1);
 	}
 	else if (p == 0) {
-		open_copy("child_copy", copy_f);
-		printf("CHild\n");
+		open_copy(CHILD, copy_f);
+		printf("Child:\n");
+		print_file(CHILD);
 		exit(0);
 	}
 	else {
 		wait(NULL);
 		lseek(copy_f, 0, SEEK_SET);
-		open_copy("parent_copy", copy_f);
-		printf("Parrent\n");
+		open_copy(PARENT, copy_f);
+		printf("Parent:\n");
+		print_file(PARENT);
 	}
 	return 0;
 }
