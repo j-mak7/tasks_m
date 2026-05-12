@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -g
-SOURCES=7.c
+SOURCES=7.c copy.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=task7
 
